@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Physik</class>
+ <widget class="QMainWindow" name="Physik">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>619</width>
+    <height>537</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Physik</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lbMain">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>531</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../Science/formula.png</pixmap>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>619</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Datei">
+    <property name="title">
+     <string>&amp;Datei</string>
+    </property>
+    <addaction name="action_Schlie_en"/>
+   </widget>
+   <widget class="QMenu" name="menuMechanik">
+    <property name="title">
+     <string>Mechanik</string>
+    </property>
+    <addaction name="action_Impuls"/>
+    <addaction name="actionEinfaches_Pendel"/>
+    <addaction name="actionSchiefer_Wurf"/>
+    <addaction name="actionLissajous_Figuren"/>
+   </widget>
+   <widget class="QMenu" name="menu_ber">
+    <property name="title">
+     <string>Über</string>
+    </property>
+    <addaction name="action_ber"/>
+    <addaction name="actionTest"/>
+   </widget>
+   <widget class="QMenu" name="menuMathematik">
+    <property name="title">
+     <string>Mathematik</string>
+    </property>
+    <widget class="QMenu" name="menuInterpolation">
+     <property name="title">
+      <string>Interpolation</string>
+     </property>
+     <addaction name="actionLineare_Regression"/>
+     <addaction name="actionkleinste_Quadrate_Polynom"/>
+    </widget>
+    <addaction name="actionVektorrechnung"/>
+    <addaction name="menuInterpolation"/>
+   </widget>
+   <widget class="QMenu" name="menuElektrodynamik">
+    <property name="title">
+     <string>Elektrodynamik</string>
+    </property>
+    <addaction name="actiongeladenes_Teichen_im_Magnetfeld"/>
+   </widget>
+   <addaction name="menu_Datei"/>
+   <addaction name="menuMechanik"/>
+   <addaction name="menuElektrodynamik"/>
+   <addaction name="menuMathematik"/>
+   <addaction name="menu_ber"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Schlie_en">
+   <property name="text">
+    <string>&amp;Schließen</string>
+   </property>
+  </action>
+  <action name="action_Impuls">
+   <property name="text">
+    <string>&amp;Impuls</string>
+   </property>
+  </action>
+  <action name="actionVektorrechnung">
+   <property name="text">
+    <string>Vektorrechnung</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Methode der kleinsten Quadrate</string>
+   </property>
+  </action>
+  <action name="actionLineare_Regression">
+   <property name="text">
+    <string>Lineare Regression (Aitken)</string>
+   </property>
+  </action>
+  <action name="actionkleinste_Quadrate_Polynom">
+   <property name="text">
+    <string>kleinste Quadrate (Polynom)</string>
+   </property>
+  </action>
+  <action name="action_ber">
+   <property name="text">
+    <string>Über</string>
+   </property>
+  </action>
+  <action name="actionTest">
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </action>
+  <action name="actionEinfaches_Pendel">
+   <property name="text">
+    <string>Einfaches Pendel</string>
+   </property>
+  </action>
+  <action name="actionSchiefer_Wurf">
+   <property name="text">
+    <string>Schiefer Wurf</string>
+   </property>
+  </action>
+  <action name="actionLissajous_Figuren">
+   <property name="text">
+    <string>Lissajous Figuren</string>
+   </property>
+  </action>
+  <action name="actiongeladenes_Teichen_im_Magnetfeld">
+   <property name="text">
+    <string>geladenes Teichen im Magnetfeld</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>action_Schlie_en</sender>
+   <signal>triggered()</signal>
+   <receiver>Physik</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
