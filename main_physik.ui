@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../Science/formula.png</pixmap>
+     <pixmap>formula.png</pixmap>
     </property>
    </widget>
   </widget>
