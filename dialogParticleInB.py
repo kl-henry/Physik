@@ -14,7 +14,7 @@ from utilities.messageBoxes import show_warning
 
 class dlgParticleInB(QDialog, Ui_dlgParticleInB):
     def __init__(self):
-        # print("dlgLissajous Enter")
+        # print("dlgParticleInB Enter")
         super(dlgParticleInB, self).__init__()
 
 

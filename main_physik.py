@@ -1,5 +1,6 @@
 from PySide2.QtWidgets import QMainWindow
 
+from dialog1_dim_Box import dlg1_dim_Box
 from dialogBerechneImpuls import dlgWinBerechneImpuls
 from dialogEinfachesPendel import dlgEinfachesPendel
 from dialogLissajous import dlgLissajous
@@ -24,6 +25,7 @@ class MainWindow(QMainWindow, Ui_Physik):
         self.actionSchiefer_Wurf.triggered.connect(self.dlg_SchieferWurf)
         self.actionLissajous_Figuren.triggered.connect(self.dlg_Lissajous)
         self.actiongeladenes_Teichen_im_Magnetfeld.triggered.connect(self.dlg_ParticleInB)
+        self.action1_dim_Box.triggered.connect(self.dlg_Win_1_dim_Box)
         self.actionMinigolf.triggered.connect(self.dlg_Minigolf)
         self.actionTest.triggered.connect(self.dlg_Test)
 
@@ -75,6 +77,12 @@ class MainWindow(QMainWindow, Ui_Physik):
     def dlg_ParticleInB():
         # print("MainWindow: dlg_ParticleInB")
         dlgWin = dlgParticleInB()
+        dlgWin.exec_()
+
+    @staticmethod
+    def dlg_Win_1_dim_Box():
+        # print("MainWindow: dlg_Win_1_dim_Box")
+        dlgWin = dlg1_dim_Box()
         dlgWin.exec_()
 
     @staticmethod

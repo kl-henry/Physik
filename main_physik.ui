@@ -86,6 +86,7 @@
     <property name="title">
      <string>Simulation</string>
     </property>
+    <addaction name="action1_dim_Box"/>
     <addaction name="actionMinigolf"/>
    </widget>
    <addaction name="menu_Datei"/>
@@ -159,6 +160,11 @@
   <action name="actionMinigolf">
    <property name="text">
     <string>Minigolf</string>
+   </property>
+  </action>
+  <action name="action1_dim_Box">
+   <property name="text">
+    <string>1 dim. Box</string>
    </property>
   </action>
  </widget>
