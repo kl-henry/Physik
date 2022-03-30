@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../Science/formula.png</pixmap>
+     <pixmap>formula.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -82,10 +82,17 @@
     </property>
     <addaction name="actiongeladenes_Teichen_im_Magnetfeld"/>
    </widget>
+   <widget class="QMenu" name="menuSimulation">
+    <property name="title">
+     <string>Simulation</string>
+    </property>
+    <addaction name="actionMinigolf"/>
+   </widget>
    <addaction name="menu_Datei"/>
    <addaction name="menuMechanik"/>
    <addaction name="menuElektrodynamik"/>
    <addaction name="menuMathematik"/>
+   <addaction name="menuSimulation"/>
    <addaction name="menu_ber"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -147,6 +154,11 @@
   <action name="actiongeladenes_Teichen_im_Magnetfeld">
    <property name="text">
     <string>geladenes Teichen im Magnetfeld</string>
+   </property>
+  </action>
+  <action name="actionMinigolf">
+   <property name="text">
+    <string>Minigolf</string>
    </property>
   </action>
  </widget>

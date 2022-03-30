@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_physik.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.1
+## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -42,12 +42,14 @@ class Ui_Physik(object):
         self.actionLissajous_Figuren.setObjectName(u"actionLissajous_Figuren")
         self.actiongeladenes_Teichen_im_Magnetfeld = QAction(Physik)
         self.actiongeladenes_Teichen_im_Magnetfeld.setObjectName(u"actiongeladenes_Teichen_im_Magnetfeld")
+        self.actionMinigolf = QAction(Physik)
+        self.actionMinigolf.setObjectName(u"actionMinigolf")
         self.centralwidget = QWidget(Physik)
         self.centralwidget.setObjectName(u"centralwidget")
         self.lbMain = QLabel(self.centralwidget)
         self.lbMain.setObjectName(u"lbMain")
         self.lbMain.setGeometry(QRect(40, 30, 531, 411))
-        self.lbMain.setPixmap(QPixmap(u"../Science/formula.png"))
+        self.lbMain.setPixmap(QPixmap(u"formula.png"))
         Physik.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(Physik)
         self.menubar.setObjectName(u"menubar")
@@ -64,6 +66,8 @@ class Ui_Physik(object):
         self.menuInterpolation.setObjectName(u"menuInterpolation")
         self.menuElektrodynamik = QMenu(self.menubar)
         self.menuElektrodynamik.setObjectName(u"menuElektrodynamik")
+        self.menuSimulation = QMenu(self.menubar)
+        self.menuSimulation.setObjectName(u"menuSimulation")
         Physik.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(Physik)
         self.statusbar.setObjectName(u"statusbar")
@@ -73,6 +77,7 @@ class Ui_Physik(object):
         self.menubar.addAction(self.menuMechanik.menuAction())
         self.menubar.addAction(self.menuElektrodynamik.menuAction())
         self.menubar.addAction(self.menuMathematik.menuAction())
+        self.menubar.addAction(self.menuSimulation.menuAction())
         self.menubar.addAction(self.menu_ber.menuAction())
         self.menu_Datei.addAction(self.action_Schlie_en)
         self.menuMechanik.addAction(self.action_Impuls)
@@ -86,6 +91,7 @@ class Ui_Physik(object):
         self.menuInterpolation.addAction(self.actionLineare_Regression)
         self.menuInterpolation.addAction(self.actionkleinste_Quadrate_Polynom)
         self.menuElektrodynamik.addAction(self.actiongeladenes_Teichen_im_Magnetfeld)
+        self.menuSimulation.addAction(self.actionMinigolf)
 
         self.retranslateUi(Physik)
         self.action_Schlie_en.triggered.connect(Physik.close)
@@ -107,6 +113,7 @@ class Ui_Physik(object):
         self.actionSchiefer_Wurf.setText(QCoreApplication.translate("Physik", u"Schiefer Wurf", None))
         self.actionLissajous_Figuren.setText(QCoreApplication.translate("Physik", u"Lissajous Figuren", None))
         self.actiongeladenes_Teichen_im_Magnetfeld.setText(QCoreApplication.translate("Physik", u"geladenes Teichen im Magnetfeld", None))
+        self.actionMinigolf.setText(QCoreApplication.translate("Physik", u"Minigolf", None))
         self.lbMain.setText("")
         self.menu_Datei.setTitle(QCoreApplication.translate("Physik", u"&Datei", None))
         self.menuMechanik.setTitle(QCoreApplication.translate("Physik", u"Mechanik", None))
@@ -114,5 +121,6 @@ class Ui_Physik(object):
         self.menuMathematik.setTitle(QCoreApplication.translate("Physik", u"Mathematik", None))
         self.menuInterpolation.setTitle(QCoreApplication.translate("Physik", u"Interpolation", None))
         self.menuElektrodynamik.setTitle(QCoreApplication.translate("Physik", u"Elektrodynamik", None))
+        self.menuSimulation.setTitle(QCoreApplication.translate("Physik", u"Simulation", None))
     # retranslateUi
 

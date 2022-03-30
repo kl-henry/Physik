@@ -24,6 +24,7 @@ class MainWindow(QMainWindow, Ui_Physik):
         self.actionSchiefer_Wurf.triggered.connect(self.dlg_SchieferWurf)
         self.actionLissajous_Figuren.triggered.connect(self.dlg_Lissajous)
         self.actiongeladenes_Teichen_im_Magnetfeld.triggered.connect(self.dlg_ParticleInB)
+        self.actionMinigolf.triggered.connect(self.dlg_Minigolf)
         self.actionTest.triggered.connect(self.dlg_Test)
 
         self.show()
@@ -74,6 +75,12 @@ class MainWindow(QMainWindow, Ui_Physik):
     def dlg_ParticleInB():
         # print("MainWindow: dlg_ParticleInB")
         dlgWin = dlgParticleInB()
+        dlgWin.exec_()
+
+    @staticmethod
+    def dlg_Minigolf():
+        print("MainWindow: dlg_Minigolf")
+        dlgWin = dlgWinTest()
         dlgWin.exec_()
 
     @staticmethod

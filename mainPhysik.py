@@ -7,7 +7,9 @@ from main_physik import MainWindow
 
 
 if __name__ == '__main__':
+    print("Main Enter")
     app = QApplication(sys.argv)
+    print("Main vor mainWin")
     mainWin = MainWindow()
     ret = app.exec_()
     sys.exit(ret)
