@@ -1,5 +1,6 @@
 import math
 
+from PySide2.QtGui import QDoubleValidator
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
@@ -25,33 +26,24 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
         self.xt = None
         self.vy = None
 
+        floatValidator = QDoubleValidator(0, 100, 3)
+        self.lePotentialWidthInput.setValidator(floatValidator)
+        self.leX0Input.setValidator(floatValidator)
+        self.leY0Input.setValidator(floatValidator)
+        self.leV0xInput.setValidator(floatValidator)
+        self.leV0yInput.setValidator(floatValidator)
+
         self.pbBerechne.clicked.connect(self.berechne)
         self.pbEingabe.clicked.connect(self.datenEingabe)
         self.pbGraphik.clicked.connect(self.show_Graph)
 
     def berechne(self):
         # print("dlg1_dim_Box: enter berechne")
-        if self.lePendLengthInput.text() == "" or self.leAuslenkungInput.text == "":
+        if self.lePotentialWidthInput.text() == "" or self.leX0Input.text == "" or self.leY0Input.text == "" \
+                or self.leV0xInput.text == "" or self.leV0yInput.text == "":
             show_warning(self=None, title="Warning", text="Daten unvollständig")
         else:
-            laenge = float(self.lePendLengthInput.text())
-            omega = math.sqrt(scipy.constants.g / laenge)
-            period = (math.pi * 2.0) / omega
-
-            # print(f"dlg1_dim_Box: berechne Frequenz, Periode {omega:.5f} {period:.5f} "
-            #       f"(g: {scipy.constants.g:.5f})")
-
-            self.leFrequenz.setText(f"{omega:.5f}" + " [Hz]")
-            self.leSchwingungsDauer.setText(f"{period:.5f}" + " [s]")
-
-            theta0 = float(self.leAuslenkungInput.text())
-            self.xt = np.linspace(0, int(self.spLaufzeitInput.text()), int(self.spIntervalleInput.text()))
-            theta = theta0 * np.cos(self.xt)
-            theta_dt = -1 * omega * theta0 * np.sin(self.xt)
-
-            self.yt = -1 * laenge * np.cos(theta)
-            # vx = laenge * theta_dt * np.cos(theta)
-            self.vy = laenge * theta_dt * np.sin(theta)
+            laenge = float(self.lePotentialWidthInput.text())
 
             # print(f"dlg1_dim_Box: berechne xt, theta: ", self.xt, theta)
             # print(f"dlg1_dim_Box: berechne xt, yt, vy: ", self.xt, self.yt, self.vy)
@@ -61,9 +53,11 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
         self.gbDatenEingabe.setEnabled(True)
         self.spIntervalleInput.setEnabled(True)
         self.spLaufzeitInput.setEnabled(True)
-        self.leV0Input.setEnabled(True)
         self.lePotentialWidthInput.setEnabled(True)
         self.leX0Input.setEnabled(True)
+        self.leY0Input.setEnabled(True)
+        self.leV0xInput.setEnabled(True)
+        self.leV0yInput.setEnabled(True)
 
     def _init_graph(self):
         self.resize(self.dialogWidth + 480, self.dialogHeight)
@@ -78,7 +72,7 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
         return ax
 
     def show_Graph(self):
-        # print("dlg1_dim_Box: show_Graph Start")
+        # print("dlgWinLineareRegression: show_Graph Start")
         if self.windowResized:
             self.resize(self.dialogWidth, self.dialogHeight)
             self.windowResized = False
@@ -95,5 +89,6 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
             ax.legend(loc='lower right')
             self.lyGraph.addWidget(self.toolbar)
             self.lyGraph.addWidget(self.canvas)
+
 
             # self.canvas.draw()

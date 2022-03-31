@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>170</y>
+     <y>210</y>
      <width>84</width>
      <height>34</height>
     </rect>
@@ -96,7 +96,7 @@
      <x>10</x>
      <y>60</y>
      <width>571</width>
-     <height>91</height>
+     <height>130</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -126,10 +126,10 @@ color: black;
       <x>10</x>
       <y>30</y>
       <width>551</width>
-      <height>38</height>
+      <height>74</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="hlySchieferWurf">
+    <layout class="QHBoxLayout" name="hly1_dim_Box">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -160,26 +160,6 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbV0">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anfangsgeschwingikeit [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="text">
-        <string>v0:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="leV0Input">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anfangsgeschwingikeit [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QLabel" name="lbX0">
        <property name="text">
         <string>X0:</string>
@@ -187,9 +167,40 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leX0Input">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="leX0Input">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="leX0Input_2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbV0x">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anfangsgeschwingikeit [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>v0x:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="leV0xInput">
        <property name="enabled">
         <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anfangsgeschwingikeit [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -286,7 +297,7 @@ color: black;
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>230</y>
+     <y>270</y>
      <width>571</width>
      <height>101</height>
     </rect>
