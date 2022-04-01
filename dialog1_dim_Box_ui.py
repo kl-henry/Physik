@@ -95,28 +95,6 @@ class Ui_dlg_Win_1_dim_box(object):
 
         self.hly1_dim_Box.addWidget(self.lePotentialWidthInput)
 
-        self.lbX0 = QLabel(self.layoutWidget_3)
-        self.lbX0.setObjectName(u"lbX0")
-
-        self.hly1_dim_Box.addWidget(self.lbX0)
-
-        self.leX0Input = QLineEdit(self.layoutWidget_3)
-        self.leX0Input.setObjectName(u"leX0Input")
-        self.leX0Input.setEnabled(False)
-
-        self.hly1_dim_Box.addWidget(self.leX0Input)
-
-        self.lbV0x = QLabel(self.layoutWidget_3)
-        self.lbV0x.setObjectName(u"lbV0x")
-
-        self.hly1_dim_Box.addWidget(self.lbV0x)
-
-        self.leV0xInput = QLineEdit(self.layoutWidget_3)
-        self.leV0xInput.setObjectName(u"leV0xInput")
-        self.leV0xInput.setEnabled(False)
-
-        self.hly1_dim_Box.addWidget(self.leV0xInput)
-
         self.lbLaufzeit_2 = QLabel(self.layoutWidget_3)
         self.lbLaufzeit_2.setObjectName(u"lbLaufzeit_2")
 
@@ -143,20 +121,57 @@ class Ui_dlg_Win_1_dim_box(object):
 
         self.hly1_dim_Box.addWidget(self.spIntervalleInput)
 
-        self.lbY0 = QLabel(self.gbDatenEingabe)
-        self.lbY0.setObjectName(u"lbY0")
-        self.lbY0.setGeometry(QRect(190, 80, 19, 39))
-        self.leY0Input = QLineEdit(self.gbDatenEingabe)
-        self.leY0Input.setObjectName(u"leY0Input")
-        self.leY0Input.setEnabled(False)
-        self.leY0Input.setGeometry(QRect(210, 80, 50, 32))
-        self.lbV0y = QLabel(self.gbDatenEingabe)
+        self.layoutWidget_4 = QWidget(self.gbDatenEingabe)
+        self.layoutWidget_4.setObjectName(u"layoutWidget_4")
+        self.layoutWidget_4.setGeometry(QRect(10, 80, 551, 41))
+        self.hly1_dim_Box_2 = QHBoxLayout(self.layoutWidget_4)
+        self.hly1_dim_Box_2.setSpacing(0)
+        self.hly1_dim_Box_2.setObjectName(u"hly1_dim_Box_2")
+        self.hly1_dim_Box_2.setContentsMargins(0, 0, 0, 0)
+        self.lbX0x = QLabel(self.layoutWidget_4)
+        self.lbX0x.setObjectName(u"lbX0x")
+
+        self.hly1_dim_Box_2.addWidget(self.lbX0x)
+
+        self.leX0xInput = QLineEdit(self.layoutWidget_4)
+        self.leX0xInput.setObjectName(u"leX0xInput")
+        self.leX0xInput.setEnabled(False)
+
+        self.hly1_dim_Box_2.addWidget(self.leX0xInput)
+
+        self.lbX0y = QLabel(self.layoutWidget_4)
+        self.lbX0y.setObjectName(u"lbX0y")
+
+        self.hly1_dim_Box_2.addWidget(self.lbX0y)
+
+        self.leX0yInput = QLineEdit(self.layoutWidget_4)
+        self.leX0yInput.setObjectName(u"leX0yInput")
+        self.leX0yInput.setEnabled(False)
+
+        self.hly1_dim_Box_2.addWidget(self.leX0yInput)
+
+        self.lbV0x_2 = QLabel(self.layoutWidget_4)
+        self.lbV0x_2.setObjectName(u"lbV0x_2")
+
+        self.hly1_dim_Box_2.addWidget(self.lbV0x_2)
+
+        self.leV0xInput = QLineEdit(self.layoutWidget_4)
+        self.leV0xInput.setObjectName(u"leV0xInput")
+        self.leV0xInput.setEnabled(False)
+
+        self.hly1_dim_Box_2.addWidget(self.leV0xInput)
+
+        self.lbV0y = QLabel(self.layoutWidget_4)
         self.lbV0y.setObjectName(u"lbV0y")
-        self.lbV0y.setGeometry(QRect(260, 80, 25, 39))
-        self.leV0yInput = QLineEdit(self.gbDatenEingabe)
+
+        self.hly1_dim_Box_2.addWidget(self.lbV0y)
+
+        self.leV0yInput = QLineEdit(self.layoutWidget_4)
         self.leV0yInput.setObjectName(u"leV0yInput")
         self.leV0yInput.setEnabled(False)
-        self.leV0yInput.setGeometry(QRect(284, 80, 50, 32))
+
+        self.hly1_dim_Box_2.addWidget(self.leV0yInput)
+
         self.pbEingabe = QPushButton(dlg_Win_1_dim_box)
         self.pbEingabe.setObjectName(u"pbEingabe")
         self.pbEingabe.setGeometry(QRect(10, 20, 121, 34))
@@ -225,6 +240,9 @@ class Ui_dlg_Win_1_dim_box(object):
 
         self.horizontalLayout_10.addWidget(self.leStatus)
 
+#if QT_CONFIG(shortcut)
+        self.lbPotentialWidth.setBuddy(self.lePotentialWidthInput)
+#endif // QT_CONFIG(shortcut)
 
         self.retranslateUi(dlg_Win_1_dim_box)
         self.buttonBox.accepted.connect(dlg_Win_1_dim_box.accept)
@@ -239,17 +257,17 @@ class Ui_dlg_Win_1_dim_box(object):
         self.pbVergleich.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Vergleich mit/ohne Luftwiderstand", None))
         self.gbDatenEingabe.setTitle(QCoreApplication.translate("dlg_Win_1_dim_box", u"Daten Eingabe", None))
         self.lbPotentialWidth.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"L\u00e4nge des Potentials:", None))
-        self.lbX0.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"X0:", None))
+        self.lbLaufzeit_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Laufzeit:", None))
+        self.lbIntervalle_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Intervalle:", None))
+        self.lbX0x.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"X0x:", None))
+        self.lbX0y.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"X0y:", None))
 #if QT_CONFIG(tooltip)
-        self.lbV0x.setToolTip(QCoreApplication.translate("dlg_Win_1_dim_box", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
+        self.lbV0x_2.setToolTip(QCoreApplication.translate("dlg_Win_1_dim_box", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.lbV0x.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"v0x:", None))
+        self.lbV0x_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"v0x:", None))
 #if QT_CONFIG(tooltip)
         self.leV0xInput.setToolTip(QCoreApplication.translate("dlg_Win_1_dim_box", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.lbLaufzeit_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Laufzeit:", None))
-        self.lbIntervalle_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Intervalle:", None))
-        self.lbY0.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Y0:", None))
 #if QT_CONFIG(tooltip)
         self.lbV0y.setToolTip(QCoreApplication.translate("dlg_Win_1_dim_box", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
