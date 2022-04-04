@@ -17,7 +17,7 @@ class Ui_dlg_Win_1_dim_box(object):
     def setupUi(self, dlg_Win_1_dim_box):
         if not dlg_Win_1_dim_box.objectName():
             dlg_Win_1_dim_box.setObjectName(u"dlg_Win_1_dim_box")
-        dlg_Win_1_dim_box.resize(598, 454)
+        dlg_Win_1_dim_box.resize(596, 454)
         self.pbBerechne = QPushButton(dlg_Win_1_dim_box)
         self.pbBerechne.setObjectName(u"pbBerechne")
         self.pbBerechne.setGeometry(QRect(10, 210, 84, 34))
@@ -49,11 +49,6 @@ class Ui_dlg_Win_1_dim_box(object):
         self.lyGraph = QVBoxLayout(self.verticalLayoutWidget)
         self.lyGraph.setObjectName(u"lyGraph")
         self.lyGraph.setContentsMargins(0, 0, 0, 0)
-        self.pbVergleich = QPushButton(self.verticalLayoutWidget)
-        self.pbVergleich.setObjectName(u"pbVergleich")
-
-        self.lyGraph.addWidget(self.pbVergleich)
-
         self.gbDatenEingabe = QGroupBox(dlg_Win_1_dim_box)
         self.gbDatenEingabe.setObjectName(u"gbDatenEingabe")
         self.gbDatenEingabe.setEnabled(False)
@@ -254,7 +249,6 @@ class Ui_dlg_Win_1_dim_box(object):
         dlg_Win_1_dim_box.setWindowTitle(QCoreApplication.translate("dlg_Win_1_dim_box", u"Teilchen im 1 dim. Potential", None))
         self.pbBerechne.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Berechne", None))
         self.pbGraphik.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Graph >>>", None))
-        self.pbVergleich.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Vergleich mit/ohne Luftwiderstand", None))
         self.gbDatenEingabe.setTitle(QCoreApplication.translate("dlg_Win_1_dim_box", u"Daten Eingabe", None))
         self.lbPotentialWidth.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"L\u00e4nge des Potentials:", None))
         self.lbLaufzeit_2.setText(QCoreApplication.translate("dlg_Win_1_dim_box", u"Laufzeit:", None))

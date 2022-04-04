@@ -71,10 +71,10 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
                 x = x + vx * dt
                 y = y + vy * dt
                 if x < 0.0 or x > laenge:
-                    vx = -1 * v0x
+                    vx = -1 * vx
                     nx = nx + 1
                 if y < 0.0 or y > laenge:
-                    vy = -1 * v0y
+                    vy = -1 * vy
                     ny = ny + 1
                 self.xt.append(x)
                 self.yt.append(y)
@@ -85,7 +85,7 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
             self.vy = np.array(self.vx)
             self.vy = np.array(self.vy)
 
-            self.leStatus.setText("Fertig! " + str(len(self.xt)) + " " + str(dt))
+            self.leStatus.setText(f"Fertig! {dt:2.4f}")
             # print(f"dlg1_dim_Box: berechne xt, theta: ", self.xt, theta)
             # print(f"dlg1_dim_Box: berechne xt, yt, vy: ", self.xt, self.yt, self.vy)
 
@@ -110,11 +110,13 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
         self.canvas = FigureCanvas(self.figure)
         self.toolbar = NavigationToolbar(self.canvas, self)
         self.figure.clear()
-        ax = self.figure.add_subplot(111)
-        return ax
+        ax111 = plt.subplot(211)
+        ax211 = plt.subplot(212)
+        self.figure.tight_layout(h_pad=3)
+        return ax111, ax211
 
     def show_Graph(self):
-        # print("dlgWinLineareRegression: show_Graph Start")
+        # print("dlg1_dim_Box: show_Graph Start")
         if self.windowResized:
             self.resize(self.dialogWidth, self.dialogHeight)
             self.windowResized = False
@@ -122,13 +124,16 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
             self.lyGraph.itemAt(0).widget().deleteLater()
             self.lyGraph.itemAt(1).widget().deleteLater()
         else:
-            ax = self._init_graph()
+            ax1, ax2 = self._init_graph()
 
-            ax.plot(self.xt, self.yt, '-r', linewidth=2, label='Ausl.')
+            ax1.plot(self.t, self.xt, '-r', linewidth=2, label='x')
+            ax1.plot(self.t, self.yt, dashes=[30, 5, 10, 5], label='y')
+            ax2.plot(self.t, self.vx, '-r', linewidth=2, label='vx')
+            ax2.plot(self.t, self.vy, dashes=[30, 5, 10, 5], label='vy')
 
-            ax.plot(self.xt, self.vy, dashes=[30, 5, 10, 5], label='Geschw.')
             plt.grid(True)
-            ax.legend(loc='lower right')
+            ax1.legend(loc='lower right')
+            ax2.legend(loc='lower right')
             self.lyGraph.addWidget(self.toolbar)
             self.lyGraph.addWidget(self.canvas)
 
