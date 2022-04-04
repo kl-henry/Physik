@@ -4,6 +4,7 @@ from dialog1_dim_Box import dlg1_dim_Box
 from dialogBerechneImpuls import dlgWinBerechneImpuls
 from dialogEinfachesPendel import dlgEinfachesPendel
 from dialogLissajous import dlgLissajous
+from dialogMinigolf import dlgMinigolf
 from dialogParticleInB import dlgParticleInB
 from dialogPolyRegression import dlgWinPolyRegression
 from dialogSchieferWurf import dlgSchieferWurf
@@ -88,7 +89,7 @@ class MainWindow(QMainWindow, Ui_Physik):
     @staticmethod
     def dlg_Minigolf():
         print("MainWindow: dlg_Minigolf")
-        dlgWin = dlgWinTest()
+        dlgWin = dlgMinigolf()
         dlgWin.exec_()
 
     @staticmethod
