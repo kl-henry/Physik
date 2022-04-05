@@ -1,5 +1,3 @@
-import math
-
 from PySide2.QtGui import QDoubleValidator
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -54,7 +52,6 @@ class dlg1_dim_Box(QDialog, Ui_dlg_Win_1_dim_box):
 
             self.leZeitintervall.setText(str(len(self.t)))
 
-            t0 = 0
             x = x0x
             y = x0y
             vx = v0x

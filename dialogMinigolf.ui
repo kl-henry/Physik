@@ -121,7 +121,7 @@ color: black;
       <height>41</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="hly1_dim_Box">
+    <layout class="QHBoxLayout" name="hlyMinigolf_Box">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -131,7 +131,7 @@ color: black;
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Länge des Potentials:</string>
+        <string>Länge Potential:</string>
        </property>
        <property name="buddy">
         <cstring>lePotentialWidthInput</cstring>
@@ -160,7 +160,7 @@ color: black;
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Höhe des Potentials:</string>
+        <string>Höhe Potential:</string>
        </property>
        <property name="buddy">
         <cstring>lePotentialWidthInput</cstring>
@@ -168,7 +168,7 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lePotentialHeightInpu">
+      <widget class="QLineEdit" name="lePotentialHeightInput">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -234,7 +234,7 @@ color: black;
       <height>41</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="hly1_dim_Box_2">
+    <layout class="QHBoxLayout" name="hlyMinigolf_Box_2">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -274,7 +274,7 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leYRadiusKreisInput">
+      <widget class="QLineEdit" name="leRadiusKreisInput">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -291,7 +291,7 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leV0xInput">
+      <widget class="QLineEdit" name="leV0Input">
        <property name="enabled">
         <bool>false</bool>
        </property>

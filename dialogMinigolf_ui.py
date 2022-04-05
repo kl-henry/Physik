@@ -72,15 +72,15 @@ class Ui_dlgMinigolf(object):
         self.layoutWidget_3 = QWidget(self.gbDatenEingabe)
         self.layoutWidget_3.setObjectName(u"layoutWidget_3")
         self.layoutWidget_3.setGeometry(QRect(10, 30, 551, 41))
-        self.hly1_dim_Box = QHBoxLayout(self.layoutWidget_3)
-        self.hly1_dim_Box.setSpacing(0)
-        self.hly1_dim_Box.setObjectName(u"hly1_dim_Box")
-        self.hly1_dim_Box.setContentsMargins(0, 0, 0, 0)
+        self.hlyMinigolf_Box = QHBoxLayout(self.layoutWidget_3)
+        self.hlyMinigolf_Box.setSpacing(0)
+        self.hlyMinigolf_Box.setObjectName(u"hlyMinigolf_Box")
+        self.hlyMinigolf_Box.setContentsMargins(0, 0, 0, 0)
         self.lbPotentialWidth = QLabel(self.layoutWidget_3)
         self.lbPotentialWidth.setObjectName(u"lbPotentialWidth")
         self.lbPotentialWidth.setEnabled(False)
 
-        self.hly1_dim_Box.addWidget(self.lbPotentialWidth)
+        self.hlyMinigolf_Box.addWidget(self.lbPotentialWidth)
 
         self.lePotentialWidthInput = QLineEdit(self.layoutWidget_3)
         self.lePotentialWidthInput.setObjectName(u"lePotentialWidthInput")
@@ -88,26 +88,26 @@ class Ui_dlgMinigolf(object):
         self.lePotentialWidthInput.setMaximumSize(QSize(998, 16777215))
         self.lePotentialWidthInput.setMaxLength(100)
 
-        self.hly1_dim_Box.addWidget(self.lePotentialWidthInput)
+        self.hlyMinigolf_Box.addWidget(self.lePotentialWidthInput)
 
         self.lbPotentialHeight = QLabel(self.layoutWidget_3)
         self.lbPotentialHeight.setObjectName(u"lbPotentialHeight")
         self.lbPotentialHeight.setEnabled(False)
 
-        self.hly1_dim_Box.addWidget(self.lbPotentialHeight)
+        self.hlyMinigolf_Box.addWidget(self.lbPotentialHeight)
 
-        self.lePotentialHeightInpu = QLineEdit(self.layoutWidget_3)
-        self.lePotentialHeightInpu.setObjectName(u"lePotentialHeightInpu")
-        self.lePotentialHeightInpu.setEnabled(False)
-        self.lePotentialHeightInpu.setMaximumSize(QSize(998, 16777215))
-        self.lePotentialHeightInpu.setMaxLength(100)
+        self.lePotentialHeightInput = QLineEdit(self.layoutWidget_3)
+        self.lePotentialHeightInput.setObjectName(u"lePotentialHeightInput")
+        self.lePotentialHeightInput.setEnabled(False)
+        self.lePotentialHeightInput.setMaximumSize(QSize(998, 16777215))
+        self.lePotentialHeightInput.setMaxLength(100)
 
-        self.hly1_dim_Box.addWidget(self.lePotentialHeightInpu)
+        self.hlyMinigolf_Box.addWidget(self.lePotentialHeightInput)
 
         self.lbLaufzeit_2 = QLabel(self.layoutWidget_3)
         self.lbLaufzeit_2.setObjectName(u"lbLaufzeit_2")
 
-        self.hly1_dim_Box.addWidget(self.lbLaufzeit_2)
+        self.hlyMinigolf_Box.addWidget(self.lbLaufzeit_2)
 
         self.spLaufzeitInput = QSpinBox(self.layoutWidget_3)
         self.spLaufzeitInput.setObjectName(u"spLaufzeitInput")
@@ -115,12 +115,12 @@ class Ui_dlgMinigolf(object):
         self.spLaufzeitInput.setMinimum(1)
         self.spLaufzeitInput.setMaximum(60)
 
-        self.hly1_dim_Box.addWidget(self.spLaufzeitInput)
+        self.hlyMinigolf_Box.addWidget(self.spLaufzeitInput)
 
         self.lbIntervalle_2 = QLabel(self.layoutWidget_3)
         self.lbIntervalle_2.setObjectName(u"lbIntervalle_2")
 
-        self.hly1_dim_Box.addWidget(self.lbIntervalle_2)
+        self.hlyMinigolf_Box.addWidget(self.lbIntervalle_2)
 
         self.spIntervalleInput = QSpinBox(self.layoutWidget_3)
         self.spIntervalleInput.setObjectName(u"spIntervalleInput")
@@ -128,69 +128,69 @@ class Ui_dlgMinigolf(object):
         self.spIntervalleInput.setMinimum(10)
         self.spIntervalleInput.setMaximum(1000)
 
-        self.hly1_dim_Box.addWidget(self.spIntervalleInput)
+        self.hlyMinigolf_Box.addWidget(self.spIntervalleInput)
 
         self.layoutWidget_4 = QWidget(self.gbDatenEingabe)
         self.layoutWidget_4.setObjectName(u"layoutWidget_4")
         self.layoutWidget_4.setGeometry(QRect(10, 80, 551, 41))
-        self.hly1_dim_Box_2 = QHBoxLayout(self.layoutWidget_4)
-        self.hly1_dim_Box_2.setSpacing(0)
-        self.hly1_dim_Box_2.setObjectName(u"hly1_dim_Box_2")
-        self.hly1_dim_Box_2.setContentsMargins(0, 0, 0, 0)
+        self.hlyMinigolf_Box_2 = QHBoxLayout(self.layoutWidget_4)
+        self.hlyMinigolf_Box_2.setSpacing(0)
+        self.hlyMinigolf_Box_2.setObjectName(u"hlyMinigolf_Box_2")
+        self.hlyMinigolf_Box_2.setContentsMargins(0, 0, 0, 0)
         self.lbXKreis = QLabel(self.layoutWidget_4)
         self.lbXKreis.setObjectName(u"lbXKreis")
 
-        self.hly1_dim_Box_2.addWidget(self.lbXKreis)
+        self.hlyMinigolf_Box_2.addWidget(self.lbXKreis)
 
         self.leXKreisInput = QLineEdit(self.layoutWidget_4)
         self.leXKreisInput.setObjectName(u"leXKreisInput")
         self.leXKreisInput.setEnabled(False)
 
-        self.hly1_dim_Box_2.addWidget(self.leXKreisInput)
+        self.hlyMinigolf_Box_2.addWidget(self.leXKreisInput)
 
         self.lbYKreis = QLabel(self.layoutWidget_4)
         self.lbYKreis.setObjectName(u"lbYKreis")
 
-        self.hly1_dim_Box_2.addWidget(self.lbYKreis)
+        self.hlyMinigolf_Box_2.addWidget(self.lbYKreis)
 
         self.leYKreisInput = QLineEdit(self.layoutWidget_4)
         self.leYKreisInput.setObjectName(u"leYKreisInput")
         self.leYKreisInput.setEnabled(False)
 
-        self.hly1_dim_Box_2.addWidget(self.leYKreisInput)
+        self.hlyMinigolf_Box_2.addWidget(self.leYKreisInput)
 
         self.lbRaduisKreis = QLabel(self.layoutWidget_4)
         self.lbRaduisKreis.setObjectName(u"lbRaduisKreis")
 
-        self.hly1_dim_Box_2.addWidget(self.lbRaduisKreis)
+        self.hlyMinigolf_Box_2.addWidget(self.lbRaduisKreis)
 
-        self.leYRadiusKreisInput = QLineEdit(self.layoutWidget_4)
-        self.leYRadiusKreisInput.setObjectName(u"leYRadiusKreisInput")
-        self.leYRadiusKreisInput.setEnabled(False)
+        self.leRadiusKreisInput = QLineEdit(self.layoutWidget_4)
+        self.leRadiusKreisInput.setObjectName(u"leRadiusKreisInput")
+        self.leRadiusKreisInput.setEnabled(False)
 
-        self.hly1_dim_Box_2.addWidget(self.leYRadiusKreisInput)
+        self.hlyMinigolf_Box_2.addWidget(self.leRadiusKreisInput)
 
         self.lbV0 = QLabel(self.layoutWidget_4)
         self.lbV0.setObjectName(u"lbV0")
 
-        self.hly1_dim_Box_2.addWidget(self.lbV0)
+        self.hlyMinigolf_Box_2.addWidget(self.lbV0)
 
-        self.leV0xInput = QLineEdit(self.layoutWidget_4)
-        self.leV0xInput.setObjectName(u"leV0xInput")
-        self.leV0xInput.setEnabled(False)
+        self.leV0Input = QLineEdit(self.layoutWidget_4)
+        self.leV0Input.setObjectName(u"leV0Input")
+        self.leV0Input.setEnabled(False)
 
-        self.hly1_dim_Box_2.addWidget(self.leV0xInput)
+        self.hlyMinigolf_Box_2.addWidget(self.leV0Input)
 
         self.lbTheta = QLabel(self.layoutWidget_4)
         self.lbTheta.setObjectName(u"lbTheta")
 
-        self.hly1_dim_Box_2.addWidget(self.lbTheta)
+        self.hlyMinigolf_Box_2.addWidget(self.lbTheta)
 
         self.leThetaInput = QLineEdit(self.layoutWidget_4)
         self.leThetaInput.setObjectName(u"leThetaInput")
         self.leThetaInput.setEnabled(False)
 
-        self.hly1_dim_Box_2.addWidget(self.leThetaInput)
+        self.hlyMinigolf_Box_2.addWidget(self.leThetaInput)
 
         self.pbEingabe = QPushButton(dlgMinigolf)
         self.pbEingabe.setObjectName(u"pbEingabe")
@@ -276,8 +276,8 @@ class Ui_dlgMinigolf(object):
         self.pbBerechne.setText(QCoreApplication.translate("dlgMinigolf", u"Berechne", None))
         self.pbGraphik.setText(QCoreApplication.translate("dlgMinigolf", u"Graph >>>", None))
         self.gbDatenEingabe.setTitle(QCoreApplication.translate("dlgMinigolf", u"Daten Eingabe", None))
-        self.lbPotentialWidth.setText(QCoreApplication.translate("dlgMinigolf", u"L\u00e4nge des Potentials:", None))
-        self.lbPotentialHeight.setText(QCoreApplication.translate("dlgMinigolf", u"H\u00f6he des Potentials:", None))
+        self.lbPotentialWidth.setText(QCoreApplication.translate("dlgMinigolf", u"L\u00e4nge Potential:", None))
+        self.lbPotentialHeight.setText(QCoreApplication.translate("dlgMinigolf", u"H\u00f6he Potential:", None))
         self.lbLaufzeit_2.setText(QCoreApplication.translate("dlgMinigolf", u"Laufzeit:", None))
         self.lbIntervalle_2.setText(QCoreApplication.translate("dlgMinigolf", u"Intervalle:", None))
         self.lbXKreis.setText(QCoreApplication.translate("dlgMinigolf", u"X Kreis:", None))
@@ -288,7 +288,7 @@ class Ui_dlgMinigolf(object):
 #endif // QT_CONFIG(tooltip)
         self.lbV0.setText(QCoreApplication.translate("dlgMinigolf", u"v0:", None))
 #if QT_CONFIG(tooltip)
-        self.leV0xInput.setToolTip(QCoreApplication.translate("dlgMinigolf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
+        self.leV0Input.setToolTip(QCoreApplication.translate("dlgMinigolf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.lbTheta.setToolTip(QCoreApplication.translate("dlgMinigolf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
