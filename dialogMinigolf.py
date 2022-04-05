@@ -17,6 +17,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
     def __init__(self):
         # print("dlgMinigolf Enter")
         super(dlgMinigolf, self).__init__()
+
         self.setupUi(self)
 
         self.dialogHeight = self.frameGeometry().height()
@@ -28,6 +29,11 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
         self.vx = None
         self.vy = None
         self.t = None
+        self.hoehePotential = None
+        self.laengePotential = None
+        self.xKreis = None
+        self.yKreis = None
+        self.rKreis = None
 
         floatValidator = QDoubleValidator(0, 100, 3)
         self.lePotentialWidthInput.setValidator(floatValidator)
@@ -49,16 +55,16 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
                 or self.leV0Input.text == "" or self.leThetaInput.text == "":
             show_warning(self=None, title="Warning", text="Daten unvollständig")
         else:
-            laengePotential = float(self.lePotentialWidthInput.text())
-            hoehePotential = float(self.lePotentialHeightInput.text())
+            self.laengePotential = float(self.lePotentialWidthInput.text())
+            self.hoehePotential = float(self.lePotentialHeightInput.text())
             v0 = float(self.leV0Input.text())
-            xKreis = float(self.leXKreisInput.text())
-            yKreis = float(self.leYKreisInput.text())
-            rKreis = float(self.leRadiusKreisInput.text())
+            self.xKreis = float(self.leXKreisInput.text())
+            self.yKreis = float(self.leYKreisInput.text())
+            self.rKreis = float(self.leRadiusKreisInput.text())
             theta = float(self.leThetaInput.text())
 
             x0x = 0
-            x0y = hoehePotential / 2
+            x0y = self.hoehePotential / 2
             self.t = np.linspace(0, int(self.spLaufzeitInput.text()), int(self.spIntervalleInput.text()))
             self.leZeitintervall.setText(str(len(self.t)))
 
@@ -69,7 +75,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
             v0y = v0 * math.sin(theta)
             vx = v0x
             vy = v0y
-            r2 = rKreis * rKreis
+            r2 = self.rKreis * self.rKreis
             nx = 0
             ny = 0
             text = ""
@@ -78,22 +84,27 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
             self.vx = []
             self.vy = []
             dt = self.t[1] - self.t[0]
-            count = len(self.t)
+            count = len(self.t) - 1
+            self.xt.append(x)
+            self.yt.append(y)
+            self.vx.append(vx)
+            self.vy.append(vy)
+            print(f"dlgMinigolf: berechne x={x:2.4f}, y={y:2.4f}")
             for i in range(count):
                 x = x + vx * dt
                 y = y + vy * dt
-                if x > laengePotential:
+                if x > self.laengePotential:
                     vx = -1 * vx
                     nx = nx + 1
-                if y < 0.0 or y > hoehePotential:
+                if y < 0.0 or y > self.hoehePotential:
                     vy = -1 * vy
                     ny = ny + 1
-                print(f"dlgMinigolf: berechne x: {x:2.4f}, y {y:2.4f}")
+                # print(f"dlgMinigolf: berechne x: {x:2.4f}, y {y:2.4f}")
                 if x < 0.0:
                     text = "Kein Treffer"
                     print(text)
                     break
-                if (x - xKreis) * (x - xKreis) + (y - yKreis) * (y - yKreis) <= r2:
+                if (x - self.xKreis) * (x - self.xKreis) + (y - self.yKreis) * (y - self.yKreis) <= r2:
                     text = "Treffer"
                     print(text)
                     break
@@ -101,7 +112,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
                 self.yt.append(y)
                 self.vx.append(vx)
                 self.vy.append(vy)
-                print(f"dlgMinigolf: berechne x: {len(self.xt):d}, y {len(self.yt):d}")
+            print(f"dlgMinigolf: berechne x, y ", self.xt, self.yt)
             self.xt = np.array(self.xt)
             self.yt = np.array(self.yt)
             self.vy = np.array(self.vx)
@@ -139,13 +150,21 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
         self.resize(self.dialogWidth + 480, self.dialogHeight)
         self.windowResized = True
         self.pbGraphik.setText("Graph <<<")
-        # print("show_Graph: type(a), type(i), type(f):", type(a), type(i), type(f))
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
         self.toolbar = NavigationToolbar(self.canvas, self)
         self.figure.clear()
         ax111 = plt.subplot()
-        self.figure.tight_layout(h_pad=3)
+        ax111.axhline(y=0, xmin=0, xmax=self.laengePotential, color='k', linewidth=2, linestyle='-')
+        ax111.axhline(y=self.hoehePotential, xmin=0, xmax=self.laengePotential,
+                      color='k', linewidth=2, linestyle='-')
+        ax111.axvline(x=self.laengePotential, ymin=0.0, ymax=self.hoehePotential,
+                      color='k', linewidth=2, linestyle='-')
+
+        cc = plt.Circle((self.xKreis, self.yKreis), self.rKreis)
+        ax111.set_aspect(1)
+        ax111.add_artist(cc)
+
         return ax111
 
     def show_Graph(self):
@@ -159,8 +178,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
         else:
             ax1 = self._init_graph()
 
-            ax1.plot(self.t, self.xt, '-r', linewidth=2, label='x')
-            # ax1.plot(self.t, self.yt, dashes=[30, 5, 10, 5], label='y')
+            ax1.plot(self.xt, self.yt, '-r', linewidth=2, label='x')
 
             plt.grid(True)
             ax1.legend(loc='lower right')

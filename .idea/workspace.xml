@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="neu Teilchen im 1 dim. Potential, korrektur">
+    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="Dialog Minigolf initial;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialog1_dim_Box.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialog1_dim_Box.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dialogMinigolf.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogMinigolf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialogMinigolf.ui" beforeDir="false" afterPath="$PROJECT_DIR$/dialogMinigolf.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialogMinigolf_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogMinigolf_ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
