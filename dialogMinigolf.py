@@ -65,8 +65,6 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
 
             x0x = 0
             x0y = self.hoehePotential / 2
-            self.t = np.linspace(0, int(self.spLaufzeitInput.text()), int(self.spIntervalleInput.text()))
-            self.leZeitintervall.setText(str(len(self.t)))
 
             x = x0x
             y = x0y
@@ -83,13 +81,13 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
             self.yt = []
             self.vx = []
             self.vy = []
-            dt = self.t[1] - self.t[0]
-            count = len(self.t) - 1
+            dt = 0.02
+            count = 999
             self.xt.append(x)
             self.yt.append(y)
             self.vx.append(vx)
             self.vy.append(vy)
-            print(f"dlgMinigolf: berechne x={x:2.4f}, y={y:2.4f}")
+            # print(f"dlgMinigolf: berechne x={x:2.4f}, y={y:2.4f}")
             for i in range(count):
                 x = x + vx * dt
                 y = y + vy * dt
@@ -118,7 +116,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
             self.vy = np.array(self.vx)
             self.vy = np.array(self.vy)
 
-            self.leStatus.setText(f"Fertig! {dt:2.4f}")
+            self.leStatus.setText(f"Fertig! {dt:2.4f} Anzahl: {count:d}")
             self.lbGraphExtensionTitel.setText(text)
             # print(f"dlgMinigolf: berechne xt, theta: ", self.xt, theta)
             # print(f"dlgMinigolf: berechne xt, yt, vy: ", self.xt, self.yt, self.vy)
@@ -161,7 +159,7 @@ class dlgMinigolf(QDialog, Ui_dlgMinigolf):
         ax111.axvline(x=self.laengePotential, ymin=0.0, ymax=self.hoehePotential,
                       color='k', linewidth=2, linestyle='-')
 
-        cc = plt.Circle((self.xKreis, self.yKreis), self.rKreis)
+        cc = plt.Circle((self.xKreis, self.yKreis), self.rKreis, fill=False)
         ax111.set_aspect(1)
         ax111.add_artist(cc)
 

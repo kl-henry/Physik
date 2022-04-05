@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="Dialog Minigolf initial;">
+    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="Dialog Minigolf Ergänzung;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dialogMinigolf.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogMinigolf.py" afterDir="false" />
     </list>
@@ -13,6 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -109,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648630292102</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dialog Minigolf Ergänzung;">
+      <created>1649159280947</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649159280947</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +137,7 @@
     </ignored-roots>
     <MESSAGE value="neu Teilchen im 1 dim. Potential" />
     <MESSAGE value="neu Teilchen im 1 dim. Potential, korrektur" />
-    <option name="LAST_COMMIT_MESSAGE" value="neu Teilchen im 1 dim. Potential, korrektur" />
+    <MESSAGE value="Dialog Minigolf Ergänzung;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dialog Minigolf Ergänzung;" />
   </component>
 </project>
