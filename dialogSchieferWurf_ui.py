@@ -49,11 +49,6 @@ class Ui_dlgSchieferWurf(object):
         self.lyGraph = QVBoxLayout(self.verticalLayoutWidget)
         self.lyGraph.setObjectName(u"lyGraph")
         self.lyGraph.setContentsMargins(0, 0, 0, 0)
-        # self.pbVergleich = QPushButton(self.verticalLayoutWidget)
-        # self.pbVergleich.setObjectName(u"pbVergleich")
-        #
-        # self.lyGraph.addWidget(self.pbVergleich)
-
         self.gbDatenEingabe = QGroupBox(dlgSchieferWurf)
         self.gbDatenEingabe.setObjectName(u"gbDatenEingabe")
         self.gbDatenEingabe.setEnabled(False)
@@ -76,7 +71,7 @@ class Ui_dlgSchieferWurf(object):
 "}")
         self.layoutWidget_3 = QWidget(self.gbDatenEingabe)
         self.layoutWidget_3.setObjectName(u"layoutWidget_3")
-        self.layoutWidget_3.setGeometry(QRect(10, 30, 551, 38))
+        self.layoutWidget_3.setGeometry(QRect(10, 30, 552, 38))
         self.hlySchieferWurf = QHBoxLayout(self.layoutWidget_3)
         self.hlySchieferWurf.setSpacing(0)
         self.hlySchieferWurf.setObjectName(u"hlySchieferWurf")
@@ -95,27 +90,27 @@ class Ui_dlgSchieferWurf(object):
 
         self.hlySchieferWurf.addWidget(self.leLuftwiderstandInput)
 
-        self.lbV0 = QLabel(self.layoutWidget_3)
-        self.lbV0.setObjectName(u"lbV0")
+        self.lbV0x = QLabel(self.layoutWidget_3)
+        self.lbV0x.setObjectName(u"lbV0x")
 
-        self.hlySchieferWurf.addWidget(self.lbV0)
+        self.hlySchieferWurf.addWidget(self.lbV0x)
 
-        self.leV0Input = QLineEdit(self.layoutWidget_3)
-        self.leV0Input.setObjectName(u"leV0Input")
-        self.leV0Input.setEnabled(False)
+        self.leV0xInput = QLineEdit(self.layoutWidget_3)
+        self.leV0xInput.setObjectName(u"leV0xInput")
+        self.leV0xInput.setEnabled(False)
 
-        self.hlySchieferWurf.addWidget(self.leV0Input)
+        self.hlySchieferWurf.addWidget(self.leV0xInput)
 
-        self.lbWinkel = QLabel(self.layoutWidget_3)
-        self.lbWinkel.setObjectName(u"lbWinkel")
+        self.lbV0y = QLabel(self.layoutWidget_3)
+        self.lbV0y.setObjectName(u"lbV0y")
 
-        self.hlySchieferWurf.addWidget(self.lbWinkel)
+        self.hlySchieferWurf.addWidget(self.lbV0y)
 
-        self.leWinkelInput = QLineEdit(self.layoutWidget_3)
-        self.leWinkelInput.setObjectName(u"leWinkelInput")
-        self.leWinkelInput.setEnabled(False)
+        self.leV0yInput = QLineEdit(self.layoutWidget_3)
+        self.leV0yInput.setObjectName(u"leV0yInput")
+        self.leV0yInput.setEnabled(False)
 
-        self.hlySchieferWurf.addWidget(self.leWinkelInput)
+        self.hlySchieferWurf.addWidget(self.leV0yInput)
 
         self.lbLaufzeit_2 = QLabel(self.layoutWidget_3)
         self.lbLaufzeit_2.setObjectName(u"lbLaufzeit_2")
@@ -186,24 +181,24 @@ class Ui_dlgSchieferWurf(object):
         self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_11 = QHBoxLayout()
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.lbV0x = QLabel(self.layoutWidget1)
-        self.lbV0x.setObjectName(u"lbV0x")
+        self.lbWinkel_2 = QLabel(self.layoutWidget1)
+        self.lbWinkel_2.setObjectName(u"lbWinkel_2")
 
-        self.horizontalLayout_11.addWidget(self.lbV0x)
+        self.horizontalLayout_11.addWidget(self.lbWinkel_2)
 
-        self.leV0x = QLineEdit(self.layoutWidget1)
-        self.leV0x.setObjectName(u"leV0x")
-        self.leV0x.setEnabled(False)
+        self.leWinkel = QLineEdit(self.layoutWidget1)
+        self.leWinkel.setObjectName(u"leWinkel")
+        self.leWinkel.setEnabled(False)
 
-        self.horizontalLayout_11.addWidget(self.leV0x)
+        self.horizontalLayout_11.addWidget(self.leWinkel)
 
 
         self.horizontalLayout_10.addLayout(self.horizontalLayout_11)
 
-        self.lbV0y = QLabel(self.layoutWidget1)
-        self.lbV0y.setObjectName(u"lbV0y")
+        self.lbStatus = QLabel(self.layoutWidget1)
+        self.lbStatus.setObjectName(u"lbStatus")
 
-        self.horizontalLayout_10.addWidget(self.lbV0y)
+        self.horizontalLayout_10.addWidget(self.lbStatus)
 
         self.leV0y = QLineEdit(self.layoutWidget1)
         self.leV0y.setObjectName(u"leV0y")
@@ -222,23 +217,23 @@ class Ui_dlgSchieferWurf(object):
         dlgSchieferWurf.setWindowTitle(QCoreApplication.translate("dlgSchieferWurf", u"Schiefer Wurf mit Luftwiderstand", None))
         self.pbBerechne.setText(QCoreApplication.translate("dlgSchieferWurf", u"Berechne", None))
         self.pbGraphik.setText(QCoreApplication.translate("dlgSchieferWurf", u"Graph >>>", None))
-        # self.pbVergleich.setText(QCoreApplication.translate("dlgSchieferWurf", u"Vergleich mit/ohne Luftwiderstand", None))
         self.gbDatenEingabe.setTitle(QCoreApplication.translate("dlgSchieferWurf", u"Daten Eingabe", None))
         self.lbLuftwiderstand.setText(QCoreApplication.translate("dlgSchieferWurf", u"Luftwiderstand:", None))
+        self.leLuftwiderstandInput.setText(QCoreApplication.translate("dlgSchieferWurf", u"0.0", None))
 #if QT_CONFIG(tooltip)
-        self.lbV0.setToolTip(QCoreApplication.translate("dlgSchieferWurf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
+        self.lbV0x.setToolTip(QCoreApplication.translate("dlgSchieferWurf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.lbV0.setText(QCoreApplication.translate("dlgSchieferWurf", u"v0:", None))
+        self.lbV0x.setText(QCoreApplication.translate("dlgSchieferWurf", u"v0x:", None))
 #if QT_CONFIG(tooltip)
-        self.leV0Input.setToolTip(QCoreApplication.translate("dlgSchieferWurf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
+        self.leV0xInput.setToolTip(QCoreApplication.translate("dlgSchieferWurf", u"<html><head/><body><p>Anfangsgeschwingikeit [m/s]</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.lbWinkel.setText(QCoreApplication.translate("dlgSchieferWurf", u"Winkel:", None))
+        self.lbV0y.setText(QCoreApplication.translate("dlgSchieferWurf", u"v0y:", None))
         self.lbLaufzeit_2.setText(QCoreApplication.translate("dlgSchieferWurf", u"Laufzeit:", None))
         self.lbIntervalle_2.setText(QCoreApplication.translate("dlgSchieferWurf", u"Intervalle:", None))
         self.pbEingabe.setText(QCoreApplication.translate("dlgSchieferWurf", u"Dateneingabe", None))
         self.lbGraphExtensionTitel.setText(QCoreApplication.translate("dlgSchieferWurf", u"Graphik Titel", None))
         self.gbErgbnis.setTitle(QCoreApplication.translate("dlgSchieferWurf", u"Ergebnis", None))
-        self.lbV0x.setText(QCoreApplication.translate("dlgSchieferWurf", u"v0x:", None))
-        self.lbV0y.setText(QCoreApplication.translate("dlgSchieferWurf", u"v0y:", None))
+        self.lbWinkel_2.setText(QCoreApplication.translate("dlgSchieferWurf", u"Winkel:", None))
+        self.lbStatus.setText(QCoreApplication.translate("dlgSchieferWurf", u"Status:", None))
     # retranslateUi
 

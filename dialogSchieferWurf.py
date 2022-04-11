@@ -8,17 +8,18 @@ import numpy as np
 import scipy.constants
 from PySide2.QtWidgets import QDialog, QPushButton
 from matplotlib import pyplot as plt
+from scipy.integrate import odeint
 
 from dialogSchieferWurf_ui import Ui_dlgSchieferWurf
 from utilities.messageBoxes import show_warning
-
+from vector_rechnung.angle_Vectors import angleBetween
+from vector_rechnung.mag_vector import magVectors
 
 class dlgSchieferWurf(QDialog, Ui_dlgSchieferWurf):
     def __init__(self):
-        # print("dlgEinfachesPendel Enter")
+        # print("dlgSchieferWurf Enter")
         super(dlgSchieferWurf, self).__init__()
 
-        self.ax = None
         self.setupUi(self)
 
         self.dialogHeight = self.frameGeometry().height()
@@ -29,113 +30,84 @@ class dlgSchieferWurf(QDialog, Ui_dlgSchieferWurf):
         self.windowResized = None
         self.xt = None
         self.yt = None
-        self.vx = None
-        self.vy = None
-        self.label_1 = None
-        self.label_2 = None
-        self.vy_ohne = None
-        self.vx_ohne = None
-        self.yt_ohne = None
-        self.xt_ohne = None
-        self.vy_mit = None
-        self.vx_mit = None
-        self.yt_mit = None
-        self.xt_mit = None
+        self.v0y = None
+        self.v0x = None
+        self.ax = None
+        self.t = None
+        self.k_air = None
 
-        self.leV0Input.setValidator(floatValidator)
-        self.leWinkelInput.setValidator(floatValidator)
+        self.leV0xInput.setValidator(floatValidator)
+        self.leV0yInput.setValidator(floatValidator)
         self.leLuftwiderstandInput.setValidator(floatValidator)
+
         self.pbBerechne.clicked.connect(self.berechne)
         self.pbEingabe.clicked.connect(self.datenEingabe)
         self.pbGraphik.clicked.connect(self.show_Graph)
 
     def berechne(self):
-        # print("dlgEinfachesPendel: enter berechne")
-        if self.leV0Input.text() == "" or self.leWinkelInput.text() == "":
+        # print("dlgSchieferWurf: enter berechne")
+        if self.leV0xInput.text() == "" or self.leV0yInput.text() == "":
             show_warning(self=None, title="Warning", text="Daten unvollständig")
         else:
-            if self.leLuftwiderstandInput.text() == "":
-                k_air = 0.0
-                air_resistance = False
-            else:
-                k_air = float(self.leLuftwiderstandInput.text())
-                air_resistance = True
-            theta = float(self.leWinkelInput.text())
-            theta = (math.pi / 180.0) * theta
-            v0 = float(self.leV0Input.text())
-            v0x = v0 * math.cos(theta)
-            v0y = v0 * math.sin(theta)
-            intervalle = int(self.spIntervalleInput.text())
-            # print(f"dlgSchieferWurf: berechne {intervalle:d}")
-            t = np.linspace(0, int(self.spLaufzeitInput.text()), int(self.spIntervalleInput.text()))
+            self.k_air = 0.0 # float(self.leLuftwiderstandInput.text())
+            self.v0x = float(self.leV0xInput.text())
+            self.v0y = float(self.leV0yInput.text())
+            theta = angleBetween((1, 0), (self.v0x, self.v0y))
+            self.leWinkel.setText(str(theta))
+            self.t = np.linspace(0, int(self.spLaufzeitInput.text()), int(self.spIntervalleInput.text()))
+            v0 = magVectors((self.v0x, self.v0y))
 
-            # print(f"dlgSchieferWurf: berechne {theta:.5f} (rad) {v0:.5f} "
-            #       f"{v0x:.5f}, {v0y:.5f}")
-
-            self.leV0x.setText(f"{v0x:.5f}")
-            self.leV0y.setText(f"{v0y:.5f}")
-
-            # Rechnung mit Luftwiderstand k_air
-            self.xt_mit = (v0x / k_air) * (1.0 - np.exp((-1 * k_air * t)))
-            self.yt_mit = (1.0 / k_air) * (v0y + (scipy.constants.g / k_air)) * (1.0 - np.exp((-1 * k_air * t))) \
-                          - (scipy.constants.g / k_air) * t
-            self.vx_mit = v0x * np.exp(-1.0 * k_air * t)
-            self.vy_mit = (v0y + (scipy.constants.g / k_air)) * np.exp(-1.0 * k_air * t) - (
-                    scipy.constants.g / k_air)
-            # Rechnung ohne Luftwiderstand
-            self.xt_ohne = v0x * t
-            self.yt_ohne = v0y * t - 0.5 * scipy.constants.g * t * t
-            self.vx_ohne = v0x
-            self.vy_ohne = v0y - scipy.constants.g * t
-            if air_resistance:
-                print(f"dlgSchieferWurf: berechne air_resistance = True")
-                self.xt = self.xt_mit
-                self.yt = self.yt_mit
-                self.vx = self.vx_mit
-                self.vy = self.vy_mit
-                self.lbGraphExtensionTitel.setText("Schiefer Wurf mit Luftwiderstand")
-            else:
-                print(f"dlgSchieferWurf: berechne air_resistance = False")
-                self.xt = self.xt_ohne
-                self.yt = self.yt_ohne
-                self.vx = self.vx_ohne
-                self.vy = self.vy_ohne
-                self.lbGraphExtensionTitel.setText("Schiefer Wurf ohne Luftwiderstand")
-
-            self.label_1 = "Pos."
-            self.label_2 = "Geschw."
-
-            # print(f"dlgSchieferWurf: berechne x = ", self.xt)
-            # print(f"dlgSchieferWurf: berechne y = ", self.yt)
+            self.xt = v0 * math.cos(theta) * self.t
+            self.yt = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta) * self.t
+            print("dlgSchieferWurf:berechne v0: ", v0)
+            print("dlgSchieferWurf:berechne g: ", scipy.constants.g)
+            print("dlgSchieferWurf:berechne xt: ", self.xt)
+            print("dlgSchieferWurf:berechne yt: ", self.yt)
 
     def datenEingabe(self):
-        # print("dlgEinfachesPendel: enter datenEingabe")
+        # print("dlgSchieferWurf: enter datenEingabe")
         self.gbDatenEingabe.setEnabled(True)
         self.spIntervalleInput.setEnabled(True)
         self.spLaufzeitInput.setEnabled(True)
-        self.leWinkelInput.setEnabled(True)
-        self.leV0Input.setEnabled(True)
+        self.lbLuftwiderstand.setEnabled(True)
+        self.leV0xInput.setEnabled(True)
+        self.leV0yInput.setEnabled(True)
         self.leLuftwiderstandInput.setEnabled(True)
 
     def _init_graph(self):
+        # print("dlgSchieferWurf _init_graph enter")
         self.resize(self.dialogWidth + 480, self.dialogHeight)
         self.windowResized = True
         self.pbGraphik.setText("Graph <<<")
-        # print("show_Graph: type(a), type(i), type(f):", type(a), type(i), type(f))
+
         self.figure = plt.figure()
         self.canvas = FigureCanvas(self.figure)
         self.toolbar = NavigationToolbar(self.canvas, self)
         self.figure.clear()
+        #---------------------------------------
+        # fig, ax = plt.subplots(figsize=(8, 5))
+        # set the x-spine
         ax = self.figure.add_subplot(111)
-        self.pbVergleich = QPushButton(self.verticalLayoutWidget)
-        self.pbVergleich.setObjectName(u"pbVergleich")
-        self.pbVergleich.setText(
-            QCoreApplication.translate("dlgSchieferWurf", u"Vergleich mit/ohne Luftwiderstand", None))
-        self.pbVergleich.clicked.connect(self.vergleich)
+        ax.spines['left'].set_position('zero')
+
+        # turn off the right spine/ticks
+        ax.spines['right'].set_color('none')
+        ax.yaxis.tick_left()
+
+        # set the y-spine
+        ax.spines['bottom'].set_position('zero')
+
+        # turn off the top spine/ticks
+        ax.spines['top'].set_color('none')
+        ax.xaxis.tick_bottom()
+        # ---------------------------------------
+        # ax = self.figure.add_subplot(111)
+        # print("_init_graph ax: ", ax)
         return ax
 
+
     def show_Graph(self):
-        # print("dlgWinLineareRegression: show_Graph Start")
+        print("dlgSchieferWurf: show_Graph Start")
         if self.windowResized:
             self.resize(self.dialogWidth, self.dialogHeight)
             self.windowResized = False
@@ -145,19 +117,18 @@ class dlgSchieferWurf(QDialog, Ui_dlgSchieferWurf):
         else:
             self.ax = self._init_graph()
 
-            self.ax.plot(self.xt, self.yt, '-r', linewidth=2, label=self.label_1)
+            self.ax.set_ylabel('$y(t)$', fontsize=14)
+            self.ax.set_xlabel('$t$', fontsize=14)
+            # self.ax.set_xlim(0, 90)
 
-            self.ax.plot(self.xt, self.vy, dashes=[30, 5, 10, 5], label=self.label_2)
+            self.ax.plot(self.t, self.yt, '-r', linewidth=2)
+            # self.ax.plot(self.t, self.xt, '-g', linewidth=2)
+            # self.ax.plot(self.yt, self.xt, '-b', linewidth=2)
+
+            # self.ax.plot(self.xt, self.vy, dashes=[30, 5, 10, 5], label=self.label_2)
             plt.grid(True)
-            self.ax.legend(loc='lower right')
+            # self.ax.legend(loc='lower right')
             self.lyGraph.addWidget(self.toolbar)
             self.lyGraph.addWidget(self.canvas)
-            self.lyGraph.addWidget(self.pbVergleich)
-            self.pbVergleich.setEnabled(True)
-            # print("show_Graph: list children: ", self.lyGraph.findChildren(QWidget))
+            # print("dlgSchieferWurf show_Graph: list children: ", self.lyGraph.findChildren(QWidget))
             # self.canvas.draw()
-
-    def vergleich(self):
-        print("dlgWinLineareRegression: vergleich Start")
-        self.ax.plot(self.xt_ohne, self.yt_ohne, '-g', linewidth=2, label=self.label_1)
-        self.canvas.draw()

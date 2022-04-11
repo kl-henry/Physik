@@ -77,15 +77,7 @@
      <height>361</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="lyGraph">
-    <item>
-     <widget class="QPushButton" name="pbVergleich">
-      <property name="text">
-       <string>Vergleich mit/ohne Luftwiderstand</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <layout class="QVBoxLayout" name="lyGraph"/>
   </widget>
   <widget class="QGroupBox" name="gbDatenEingabe">
    <property name="enabled">
@@ -125,7 +117,7 @@ color: black;
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>551</width>
+      <width>552</width>
       <height>38</height>
      </rect>
     </property>
@@ -154,23 +146,26 @@ color: black;
          <height>16777215</height>
         </size>
        </property>
+       <property name="text">
+        <string>0.0</string>
+       </property>
        <property name="maxLength">
         <number>100</number>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbV0">
+      <widget class="QLabel" name="lbV0x">
        <property name="toolTip">
         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anfangsgeschwingikeit [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
-        <string>v0:</string>
+        <string>v0x:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leV0Input">
+      <widget class="QLineEdit" name="leV0xInput">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -180,14 +175,14 @@ color: black;
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="lbWinkel">
+      <widget class="QLabel" name="lbV0y">
        <property name="text">
-        <string>Winkel:</string>
+        <string>v0y:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leWinkelInput">
+      <widget class="QLineEdit" name="leV0yInput">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -325,14 +320,14 @@ color: black;
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
-        <widget class="QLabel" name="lbV0x">
+        <widget class="QLabel" name="lbWinkel_2">
          <property name="text">
-          <string>v0x:</string>
+          <string>Winkel:</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="leV0x">
+        <widget class="QLineEdit" name="leWinkel">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -341,9 +336,9 @@ color: black;
       </layout>
      </item>
      <item>
-      <widget class="QLabel" name="lbV0y">
+      <widget class="QLabel" name="lbStatus">
        <property name="text">
-        <string>v0y:</string>
+        <string>Status:</string>
        </property>
       </widget>
      </item>
