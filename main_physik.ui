@@ -75,6 +75,7 @@
     </widget>
     <addaction name="actionVektorrechnung"/>
     <addaction name="menuInterpolation"/>
+    <addaction name="actionDifferentialgl_Vergleich"/>
    </widget>
    <widget class="QMenu" name="menuElektrodynamik">
     <property name="title">
@@ -165,6 +166,11 @@
   <action name="action1_dim_Box">
    <property name="text">
     <string>1 dim. Box</string>
+   </property>
+  </action>
+  <action name="actionDifferentialgl_Vergleich">
+   <property name="text">
+    <string>Differentialgl. Vergleich</string>
    </property>
   </action>
  </widget>
