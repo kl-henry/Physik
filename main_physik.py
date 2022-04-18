@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QMainWindow
 
 from dialog1_dim_Box import dlg1_dim_Box
 from dialogBerechneImpuls import dlgWinBerechneImpuls
+from dialogDifferentialGleichung import dlgDifferentialGleichung
 from dialogEinfachesPendel import dlgEinfachesPendel
 from dialogLissajous import dlgLissajous
 from dialogMinigolf import dlgMinigolf
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow, Ui_Physik):
         self.actiongeladenes_Teichen_im_Magnetfeld.triggered.connect(self.dlg_ParticleInB)
         self.action1_dim_Box.triggered.connect(self.dlg_Win_1_dim_Box)
         self.actionMinigolf.triggered.connect(self.dlg_Minigolf)
+        self.actionDifferentialgl_Vergleich.triggered.connect(self.dlg_DifferentialGleichung)
         self.actionTest.triggered.connect(self.dlg_Test)
 
         self.show()
@@ -91,6 +93,13 @@ class MainWindow(QMainWindow, Ui_Physik):
         print("MainWindow: dlg_Minigolf")
         dlgWin = dlgMinigolf()
         dlgWin.exec_()
+
+    @staticmethod
+    def dlg_DifferentialGleichung():
+        print("MainWindow: dlg_DifferentialGleichung")
+        dlgWin = dlgDifferentialGleichung()
+        dlgWin.exec_()
+
 
     @staticmethod
     def dlg_Test():
