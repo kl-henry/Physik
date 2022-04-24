@@ -82,6 +82,7 @@
      <string>Elektrodynamik</string>
     </property>
     <addaction name="actiongeladenes_Teichen_im_Magnetfeld"/>
+    <addaction name="actionHarmonischer_Oszillator_QM"/>
    </widget>
    <widget class="QMenu" name="menuSimulation">
     <property name="title">
@@ -171,6 +172,11 @@
   <action name="actionDifferentialgl_Vergleich">
    <property name="text">
     <string>Differentialgl. Vergleich</string>
+   </property>
+  </action>
+  <action name="actionHarmonischer_Oszillator_QM">
+   <property name="text">
+    <string>Harmonischer Oszillator (QM)</string>
    </property>
   </action>
  </widget>

@@ -8,6 +8,7 @@ from dialogLissajous import dlgLissajous
 from dialogMinigolf import dlgMinigolf
 from dialogParticleInB import dlgParticleInB
 from dialogPolyRegression import dlgWinPolyRegression
+from dialogQuantenHarmonischerOszillator import dlgQuantenHarmonischerOszillator
 from dialogSchieferWurf import dlgSchieferWurf
 from dialogTest import dlgWinTest
 from dialogVektor_berechnen import dlgWinVektor_berechnen
@@ -30,6 +31,7 @@ class MainWindow(QMainWindow, Ui_Physik):
         self.action1_dim_Box.triggered.connect(self.dlg_Win_1_dim_Box)
         self.actionMinigolf.triggered.connect(self.dlg_Minigolf)
         self.actionDifferentialgl_Vergleich.triggered.connect(self.dlg_DifferentialGleichung)
+        self.actionHarmonischer_Oszillator_QM.triggered.connect(self.dlg_QuantenHarmonischerOszillator)
         self.actionTest.triggered.connect(self.dlg_Test)
 
         self.show()
@@ -100,6 +102,11 @@ class MainWindow(QMainWindow, Ui_Physik):
         dlgWin = dlgDifferentialGleichung()
         dlgWin.exec_()
 
+    @staticmethod
+    def dlg_QuantenHarmonischerOszillator():
+        print("MainWindow: dlg_QuantenHarmonischerOszillator")
+        dlgWin = dlgQuantenHarmonischerOszillator()
+        dlgWin.exec_()
 
     @staticmethod
     def dlg_Test():
