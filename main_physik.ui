@@ -82,7 +82,6 @@
      <string>Elektrodynamik</string>
     </property>
     <addaction name="actiongeladenes_Teichen_im_Magnetfeld"/>
-    <addaction name="actionHarmonischer_Oszillator_QM"/>
    </widget>
    <widget class="QMenu" name="menuSimulation">
     <property name="title">
@@ -90,10 +89,19 @@
     </property>
     <addaction name="action1_dim_Box"/>
     <addaction name="actionMinigolf"/>
+    <addaction name="actionPlanetensystem"/>
+   </widget>
+   <widget class="QMenu" name="menuQuantenmechanik">
+    <property name="title">
+     <string>Quantenmechanik</string>
+    </property>
+    <addaction name="actionRadioaktiver_Zerfall"/>
+    <addaction name="actionHarmonischer_Oszillator"/>
    </widget>
    <addaction name="menu_Datei"/>
    <addaction name="menuMechanik"/>
    <addaction name="menuElektrodynamik"/>
+   <addaction name="menuQuantenmechanik"/>
    <addaction name="menuMathematik"/>
    <addaction name="menuSimulation"/>
    <addaction name="menu_ber"/>
@@ -174,9 +182,19 @@
     <string>Differentialgl. Vergleich</string>
    </property>
   </action>
-  <action name="actionHarmonischer_Oszillator_QM">
+  <action name="actionRadioaktiver_Zerfall">
    <property name="text">
-    <string>Harmonischer Oszillator (QM)</string>
+    <string>Radioaktiver Zerfall</string>
+   </property>
+  </action>
+  <action name="actionHarmonischer_Oszillator">
+   <property name="text">
+    <string>Harmonischer Oszillator</string>
+   </property>
+  </action>
+  <action name="actionPlanetensystem">
+   <property name="text">
+    <string>Planetensystem</string>
    </property>
   </action>
  </widget>

@@ -19,7 +19,6 @@ class dlgSchieferWurf(QDialog, Ui_dlgSchieferWurf):
         # print("dlgSchieferWurf Enter")
         super(dlgSchieferWurf, self).__init__()
 
-
         self.setupUi(self)
 
         self.dialogHeight = self.frameGeometry().height()
@@ -65,21 +64,21 @@ class dlgSchieferWurf(QDialog, Ui_dlgSchieferWurf):
             coeff1 = -0.5 * scipy.constants.g
             coeff2 = v0 * math.sin(theta)
             roots = np.roots([coeff1, coeff2])
-            self.t = np.linspace(0, int(roots[0]+1), int(self.spIntervalleInput.text()))
+            self.t = np.linspace(0, int(roots[0] + 1), int(self.spIntervalleInput.text()))
 
             # print(f"dlgSchieferWurf:berechne coeff1: {coeff1:.3f}")
             # print(f"dlgSchieferWurf:berechne coeff2: {coeff2:.3f}")
             # print(f"dlgSchieferWurf:berechne roots: ", roots)
             self.xt = v0 * math.cos(theta) * self.t
             self.yt = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta) * self.t
-            self.xt_minus = v0 * math.cos(theta-0.10) * self.t
-            self.yt_minus = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta-0.10) * self.t
-            self.xt_plus = v0 * math.cos(theta+0.20) * self.t
-            self.yt_plus = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta+0.20) * self.t
+            self.xt_minus = v0 * math.cos(theta - 0.10) * self.t
+            self.yt_minus = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta - 0.10) * self.t
+            self.xt_plus = v0 * math.cos(theta + 0.20) * self.t
+            self.yt_plus = -0.5 * scipy.constants.g * self.t * self.t + v0 * math.sin(theta + 0.20) * self.t
 
             self.lbGraphExtensionTitel.setText(f"rot: {np.degrees(theta):.3f}, "
-                                               f"blau: {np.degrees(theta+0.2):.3f}, "
-                                               f"grün : {np.degrees(theta-0.1):.3f}")
+                                               f"blau: {np.degrees(theta + 0.2):.3f}, "
+                                               f"grün : {np.degrees(theta - 0.1):.3f}")
             # print("dlgSchieferWurf:berechne v0: ", v0)
             # print("dlgSchieferWurf:berechne g: ", scipy.constants.g)
             # print("dlgSchieferWurf:berechne xt: ", self.xt)

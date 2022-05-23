@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="Differntialgl. fertig;">
-      <change afterPath="$PROJECT_DIR$/dialogQuantenHarmonischerOszillator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dialogQuantenHarmonischerOszillator.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dialogQuantenHarmonischerOszillator_ui.py" afterDir="false" />
+    <list default="true" id="6a4caa3d-eda0-4241-9dc0-31b840ba6dee" name="Changes" comment="Quanten Oszillator fertig">
+      <change afterPath="$PROJECT_DIR$/dialogRadioactiveDecay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dialogRadioactiveDecay.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dialogRadioactiveDecay_ui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dialogSimSonnensystem.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dialogSimSonnensystem_ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialogQuantenHarmonischerOszillator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogQuantenHarmonischerOszillator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialogSchieferWurf.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogSchieferWurf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_physik.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_physik.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_physik.ui" beforeDir="false" afterPath="$PROJECT_DIR$/main_physik.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_physik_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_physik_ui.py" afterDir="false" />
@@ -38,6 +43,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2709C36CchFftS6dFHkrVbHe8Ul" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -46,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;/home/hhill/Apps/PycharmProjects/PV_DataScience&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -55,7 +64,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.mainPhysik">
-    <configuration name="Projectile-Motion-II" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Gravity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Physik" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,49 +76,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/Projectile-Motion-II.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="animated_prjectile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Physik" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/animated_prjectile.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="harmonic_oscillator_wavefunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Physik" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/harmonic_oscillator_wavefunctions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/Gravity.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -139,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sympy_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="populate_radioactive_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Physik" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,7 +118,49 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/sympy_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/populate_radioactive_db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sim_orbital_motion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Physik" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/sim_orbital_motion.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sim_solar_system" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Physik" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sim_solar_system.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,10 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.mainPhysik" />
-        <item itemvalue="Python.harmonic_oscillator_wavefunctions" />
-        <item itemvalue="Python.sympy_test" />
-        <item itemvalue="Python.Projectile-Motion-II" />
-        <item itemvalue="Python.animated_prjectile" />
+        <item itemvalue="Python.Gravity" />
+        <item itemvalue="Python.sim_orbital_motion" />
+        <item itemvalue="Python.sim_solar_system" />
+        <item itemvalue="Python.populate_radioactive_db" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650255218041</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Quanten Oszillator fertig">
+      <created>1650778399579</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650778399580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +253,7 @@
     <MESSAGE value="schieder Wurf, geändert" />
     <MESSAGE value="inkl. Menü Differntialgl." />
     <MESSAGE value="Differntialgl. fertig;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Differntialgl. fertig;" />
+    <MESSAGE value="Quanten Oszillator fertig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quanten Oszillator fertig" />
   </component>
 </project>

@@ -1,17 +1,19 @@
-import math
-
 from PySide2.QtGui import QDoubleValidator
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
-import scipy.constants
+
 from PySide2.QtWidgets import QDialog
 from matplotlib import pyplot as plt
-from scipy.integrate import solve_ivp
 from scipy.special import factorial
 
 from dialogQuantenHarmonischerOszillator_ui import Ui_dlgQuantenHarmonischerOszillator
 from utilities.messageBoxes import show_warning
+
+
+def get_potential(q):
+    """Return potential energy on scaled oscillator displacement grid q."""
+    return q ** 2 / 2
 
 
 class dlgQuantenHarmonischerOszillator(QDialog, Ui_dlgQuantenHarmonischerOszillator):
@@ -40,7 +42,7 @@ class dlgQuantenHarmonischerOszillator(QDialog, Ui_dlgQuantenHarmonischerOszilla
         # Some appearance settings
         # Pad the q-axis on each side of the maximum turning points by this fraction
         self.QPAD_FRAC = 1.3
-        # Scale the wavefunctions by this much so they don't overlap
+        # Scale the wavefunctions by this much, so they don't overlap
         self.SCALING = 0.7
         # Colours of the positive and negative parts of the wavefunction
 
@@ -67,10 +69,6 @@ class dlgQuantenHarmonischerOszillator(QDialog, Ui_dlgQuantenHarmonischerOszilla
         """Return the classical turning points for state v."""
         qmax = np.sqrt(2. * self.get_E(v + 0.5))
         return -qmax, qmax
-
-    def get_potential(self, q):
-        """Return potential energy on scaled oscillator displacement grid q."""
-        return q ** 2 / 2
 
     def berechne(self):
         # print("dlgQuantenHarmonischerOszillator: enter berechne")
@@ -156,10 +154,11 @@ class dlgQuantenHarmonischerOszillator(QDialog, Ui_dlgQuantenHarmonischerOszilla
             qmin, qmax = self.get_turning_points(self.EnergyLevel)
             xmin, xmax = self.QPAD_FRAC * qmin, self.QPAD_FRAC * qmax
             q = np.linspace(qmin, qmax, 500)
-            V = self.get_potential(q)
+            V = get_potential(q)
 
             self.ax.plot(q, V, color='k', linewidth=1.5)
             # Plot each of the wavefunctions (or probability distributions) up to VMAX.
+            E_v = 0
             for v in range(self.EnergyLevel + 1):
                 psi_v = self.get_psi(v, q)
                 E_v = self.get_E(v)

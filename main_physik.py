@@ -9,7 +9,9 @@ from dialogMinigolf import dlgMinigolf
 from dialogParticleInB import dlgParticleInB
 from dialogPolyRegression import dlgWinPolyRegression
 from dialogQuantenHarmonischerOszillator import dlgQuantenHarmonischerOszillator
+from dialogRadioactiveDecay import dlgRadioactiveDecay
 from dialogSchieferWurf import dlgSchieferWurf
+from dialogSimSonnensystem import dlgSimSonnensystem
 from dialogTest import dlgWinTest
 from dialogVektor_berechnen import dlgWinVektor_berechnen
 from main_physik_ui import Ui_Physik
@@ -31,7 +33,10 @@ class MainWindow(QMainWindow, Ui_Physik):
         self.action1_dim_Box.triggered.connect(self.dlg_Win_1_dim_Box)
         self.actionMinigolf.triggered.connect(self.dlg_Minigolf)
         self.actionDifferentialgl_Vergleich.triggered.connect(self.dlg_DifferentialGleichung)
-        self.actionHarmonischer_Oszillator_QM.triggered.connect(self.dlg_QuantenHarmonischerOszillator)
+        self.actionHarmonischer_Oszillator.triggered.connect(self.dlg_QuantenHarmonischerOszillator)
+        self.actionRadioaktiver_Zerfall.triggered.connect(self.dlg_RadioaktiverZerfall)
+        self.actionPlanetensystem.triggered.connect(self.dlg_SimSonnensystem)
+
         self.actionTest.triggered.connect(self.dlg_Test)
 
         self.show()
@@ -106,6 +111,18 @@ class MainWindow(QMainWindow, Ui_Physik):
     def dlg_QuantenHarmonischerOszillator():
         print("MainWindow: dlg_QuantenHarmonischerOszillator")
         dlgWin = dlgQuantenHarmonischerOszillator()
+        dlgWin.exec_()
+
+    @staticmethod
+    def dlg_RadioaktiverZerfall():
+        print("MainWindow: dlg_RadioaktiverZerfall")
+        dlgWin = dlgRadioactiveDecay()
+        dlgWin.exec_()
+
+    @staticmethod
+    def dlg_SimSonnensystem():
+        print("MainWindow: dlg_SimSonnensystem")
+        dlgWin = dlgSimSonnensystem()
         dlgWin.exec_()
 
     @staticmethod
